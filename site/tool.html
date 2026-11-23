@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Найти место · Встретимся пешком</title>
+<meta name="description" content="Отметьте две точки в Алматы и найдите парк или библиотеку, куда оба дойдут пешком за 15 минут.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="styles.css?v=2">
+<script src="i18n.js?v=2"></script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 26 26" fill="none"><circle cx="5" cy="6" r="3.2" fill="#2E6A4E"/><circle cx="21" cy="6" r="3.2" fill="#B8552F"/><path d="M5 9.5c0 6 8 5 8 11M21 9.5c0 6-8 5-8 11" stroke="#1B1E1A" stroke-width="1.6" stroke-linecap="round"/><rect x="9.5" y="19.5" width="7" height="5" rx="1.6" fill="#1B1E1A"/></svg><span data-en="Meet on Foot">Встретимся пешком</span></a>
+  <nav class="nav"><a href="index.html" data-en="Home">Главная</a><a href="tool.html" aria-current="page" data-en="Find a place">Найти место</a><a href="about.html" data-en="About">О проекте</a></nav>
+  <button class="lang" type="button" aria-label="Language">EN</button>
+</div></header>
+
+<main class="tool">
+  <aside class="panel">
+    <h1 data-en="Where do you both live?">Где вы живёте?</h1>
+    <p class="sub" data-en="Mark two points. Any of the three ways works.">Отметьте две точки. Подойдёт любой из трёх способов.</p>
+
+    <div class="person" data-p="a">
+      <div class="person-head"><span class="dot">A</span><b data-en="First person">Первый человек</b><span class="state" id="stateA" data-en="no point yet">точки пока нет</span></div>
+      <button class="btn btn-ghost tap" type="button" data-tap="a" data-en="Tap the map">Отметить на карте</button>
+      <div class="row2">
+        <div class="field"><label for="distA" data-en="District">Район</label><select id="distA" data-dist="a"></select></div>
+        <div class="field"><label for="strA" data-en="Street">Улица</label><input id="strA" data-str="a" list="streets" autocomplete="off" placeholder="Абая" data-en-ph="Abay"></div>
+      </div>
+    </div>
+
+    <div class="person" data-p="b">
+      <div class="person-head"><span class="dot">B</span><b data-en="Second person">Второй человек</b><span class="state" id="stateB" data-en="no point yet">точки пока нет</span></div>
+      <button class="btn btn-ghost tap" type="button" data-tap="b" data-en="Tap the map">Отметить на карте</button>
+      <div class="row2">
+        <div class="field"><label for="distB" data-en="District">Район</label><select id="distB" data-dist="b"></select></div>
+        <div class="field"><label for="strB" data-en="Street">Улица</label><input id="strB" data-str="b" list="streets" autocomplete="off" placeholder="Сатпаева" data-en-ph="Satpayev"></div>
+      </div>
+    </div>
+    <p class="help" data-en="A district or a street puts the point in its middle. Drag the pin to your building for an exact answer.">Район или улица ставят точку в их середину. Перетащите метку к своему дому, чтобы ответ был точным.</p>
+    <datalist id="streets"></datalist>
+
+    <div class="seg" role="group" aria-label="Тип места">
+      <button type="button" data-kind="all" aria-pressed="true" data-en="Both">Всё</button>
+      <button type="button" data-kind="park" aria-pressed="false" data-en="Parks">Парки</button>
+      <button type="button" data-kind="library" aria-pressed="false" data-en="Libraries">Библиотеки</button>
+    </div>
+
+    <button class="btn btn-primary go" id="go" type="button" disabled data-en="Find a place">Найти место</button>
+    <div class="demo"><span class="note" data-en="Examples:">Примеры:</span>
+      <button type="button" data-demo="0" data-en="Two friends in Bostandyk">Двое в Бостандыке</button>
+      <button type="button" data-demo="1" data-en="Almaly and Medeu">Алмалы и Медеу</button>
+      <button type="button" data-demo="2" data-en="Too far apart">Слишком далеко</button>
+    </div>
+
+    <section class="results" id="results" aria-live="polite"></section>
+
+    <p class="priv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/></svg><span data-en="Your points stay in this browser tab. Nothing is saved or sent.">Точки остаются в этой вкладке браузера. Ничего не сохраняется и не отправляется.</span></p>
+  </aside>
+  <div class="map-wrap"><div id="map" role="application" aria-label="Карта Алматы"></div><div class="loading" id="loading" data-en="Loading the street map of Almaty…">Загружаю карту улиц Алматы…</div></div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="router.js?v=2"></script>
+<script src="app.js?v=2"></script>
+</body>
+</html>

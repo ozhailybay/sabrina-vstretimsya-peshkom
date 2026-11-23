@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Встретимся пешком · Алматы</title>
+<meta name="description" content="Двое отмечают, где живут. Сайт находит парк или библиотеку в Алматы, куда каждый дойдёт пешком за 15 минут.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2">
+<script src="i18n.js?v=2"></script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><svg class="brand-mark" viewBox="0 0 26 26" fill="none"><circle cx="5" cy="6" r="3.2" fill="#2E6A4E"/><circle cx="21" cy="6" r="3.2" fill="#B8552F"/><path d="M5 9.5c0 6 8 5 8 11M21 9.5c0 6-8 5-8 11" stroke="#1B1E1A" stroke-width="1.6" stroke-linecap="round"/><rect x="9.5" y="19.5" width="7" height="5" rx="1.6" fill="#1B1E1A"/></svg><span data-en="Meet on Foot">Встретимся пешком</span></a>
+  <nav class="nav"><a href="index.html" aria-current="page" data-en="Home">Главная</a><a href="tool.html" data-en="Find a place">Найти место</a><a href="about.html" data-en="About">О проекте</a></nav>
+  <button class="lang" type="button" aria-label="Language">EN</button>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <p class="kicker" data-en="Almaty · on foot · 15 minutes">Алматы · пешком · 15 минут</p>
+    <h1 data-en="Meet halfway.<br>On foot.">Встретимся<br>пешком</h1>
+    <p class="lead" data-en="Two people mark where they live. The site finds a park or a library that each of them can walk to in 15 minutes, and shows both routes.">Двое отмечают, где живут. Сайт находит парк или библиотеку, куда каждый дойдёт пешком за 15 минут, и показывает оба маршрута.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="tool.html"><span data-en="Find a place">Найти место</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10h11M11 5l5 5-5 5"/></svg></a>
+      <a class="btn btn-ghost" href="#how" data-en="How it works">Как это считается</a>
+    </div>
+  </div>
+  <div class="hero-art fade-in" aria-hidden="true">
+    <svg viewBox="0 0 520 400" fill="none">
+      <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" stroke="#ECE8DF" stroke-width="1"/></pattern></defs>
+      <rect width="520" height="400" rx="16" fill="#FBFAF7"/><rect width="520" height="400" fill="url(#grid)"/>
+      <path d="M0 300 C120 270 200 330 320 290 S470 250 520 270" stroke="#E2DED5" stroke-width="14"/>
+      <path d="M150 0 L180 400" stroke="#E9E5DC" stroke-width="10"/><path d="M0 120 L520 150" stroke="#E9E5DC" stroke-width="10"/>
+      <rect x="226" y="176" width="112" height="78" rx="18" fill="#E3EEE7" stroke="#2E6A4E" stroke-width="1.5"/>
+      <circle cx="258" cy="204" r="9" fill="#2E6A4E" opacity=".35"/><circle cx="292" cy="224" r="12" fill="#2E6A4E" opacity=".3"/><circle cx="312" cy="198" r="7" fill="#2E6A4E" opacity=".4"/>
+      <path class="draw" style="--len:420" d="M72 70 L72 120 L180 128 L196 210 L230 214" stroke="#2E6A4E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path class="draw d2" style="--len:460" d="M456 340 L420 300 L360 296 L346 250 L334 236" stroke="#B8552F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="pulse" cx="72" cy="70" r="12" fill="#2E6A4E"/><circle cx="72" cy="70" r="9" fill="#2E6A4E" stroke="#fff" stroke-width="3"/>
+      <circle class="pulse" cx="456" cy="340" r="12" fill="#B8552F"/><circle cx="456" cy="340" r="9" fill="#B8552F" stroke="#fff" stroke-width="3"/>
+      <g font-family="JetBrains Mono, monospace" font-size="15" font-weight="600">
+        <rect x="88" y="150" width="96" height="30" rx="15" fill="#fff" stroke="#E2DED5"/><text x="102" y="170" fill="#2E6A4E">A · 12 мин</text>
+        <rect x="372" y="256" width="102" height="30" rx="15" fill="#fff" stroke="#E2DED5"/><text x="386" y="276" fill="#B8552F">B · 13 мин</text>
+      </g>
+      <text x="246" y="276" font-family="Onest, sans-serif" font-size="13" fill="#4A4F47">парк</text>
+    </svg>
+  </div>
+</div></section>
+
+<section class="section" id="how"><div class="wrap split">
+  <div>
+    <h2 data-en="Fair for both of you">Честно для обоих</h2>
+    <p data-en="Most meeting apps pick the middle of a straight line. In Almaty that middle can be a highway or a steep hill. This site counts minutes along real streets and picks a place where the one who walks longer still walks as little as possible.">Обычно встречу назначают «посередине» по прямой. В Алматы эта середина может оказаться на проспекте без перехода или на крутом склоне. Сайт считает минуты по настоящим улицам и выбирает место, где тому, кто идёт дольше, всё равно идти как можно меньше.</p>
+  </div>
+  <ol class="steps">
+    <li><span class="n">01</span><div><h3 data-en="Mark two points">Отметьте две точки</h3><p data-en="Tap the map, pick a district or type a street. The address stays on your phone.">Нажмите на карту, выберите район или улицу. Адрес остаётся на вашем телефоне.</p></div></li>
+    <li><span class="n">02</span><div><h3 data-en="The site walks every street">Сайт проходит каждую улицу</h3><p data-en="About 120,000 street crossings of Almaty, each with its slope. Uphill is slower, downhill is faster.">Около 120 тысяч перекрёстков Алматы, у каждой улицы свой уклон. В гору медленнее, под гору быстрее.</p></div></li>
+    <li><span class="n">03</span><div><h3 data-en="Choose where to meet">Выберите, где встретиться</h3><p data-en="Parks and libraries that both of you reach within 15 minutes, with time there and time back home.">Парки и библиотеки, до которых оба дойдут за 15 минут, со временем туда и обратно домой.</p></div></li>
+  </ol>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <h2 data-en="Almaty is a slope">Алматы стоит на склоне</h2>
+  <p data-en="The south of the city is higher than the north, so the walk to a park and the walk back are not the same. The site uses Tobler's hiking function, the same one used in Sabrina's slope study.">Юг города выше севера, поэтому дорога до парка и дорога обратно занимают разное время. Сайт считает скорость по формуле Тоблера, той же, что в исследовании Сабрины про склоны.</p>
+  <div class="slope" style="margin-top:28px">
+    <div><div class="v num">5,7<small data-en="km/h">км/ч</small></div><div class="l" data-en="gentle downhill, 5%">лёгкий спуск, 5%</div></div>
+    <div><div class="v num">4,8<small data-en="km/h">км/ч</small></div><div class="l" data-en="flat street">ровная улица</div></div>
+    <div><div class="v num">3,4<small data-en="km/h">км/ч</small></div><div class="l" data-en="uphill, 10%">подъём, 10%</div></div>
+  </div>
+  <p class="note" style="margin-top:12px" data-en="Speeds from the formula (Tobler, 1993), scaled so that a flat street is 4.8 km/h: 15 minutes is 1.2 km.">Скорости по формуле (Тоблер, 1993), ровная улица принята за 4,8 км/ч: 15 минут — это 1,2 км.</p>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <div class="privacy">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+    <div>
+      <h2 data-en="Your address goes nowhere">Адрес никуда не уходит</h2>
+      <p data-en="The whole map of streets is downloaded once, and every calculation runs inside your browser. The points you mark are not saved and are not sent to any server. Close the page and they are gone.">Карта улиц загружается один раз, и весь расчёт идёт прямо в вашем браузере. Точки, которые вы отметили, не сохраняются и не отправляются ни на какой сервер. Закрыли страницу — их больше нет.</p>
+      <a class="btn btn-primary" href="tool.html" style="margin-top:8px" data-en="Try it">Попробовать</a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <span data-en="A project by Sabrina Torekhan, Almaty. CSC Winter Sparkathon 2026.">Проект Сабрины Торехан, Алматы. CSC Winter Sparkathon 2026.</span>
+  <span data-en="Map data © OpenStreetMap contributors">Данные карты © участники OpenStreetMap</span>
+</div></footer>
+</body>
+</html>

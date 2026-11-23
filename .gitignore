@@ -1,0 +1,9 @@
+data-build/*.pbf
+data-build/*.tif
+data-build/ways.json
+data-build/places.json
+data-build/districts.json
+.venv/
+.vercel/
+.DS_Store
+__pycache__/
